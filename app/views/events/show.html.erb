@@ -1,0 +1,67 @@
+
+<div class="container pt-5 mt-5">
+
+    
+    <div class="row mx-auto pb-1">
+        <div class="col d-flex flex-row-reverse the-reverse">
+            <h6>Créateur</h6>
+        </div>
+        <div class="col d-flex align-items-center the-reverse-right pl-0">
+            <h6><%= @event.user.first_name %> <%= @event.user.last_name %></h6>
+        </div>
+    </div>
+
+    <div class="row mx-auto pb-1">
+        <div class="col d-flex flex-row-reverse the-reverse" >
+            <h6>Nom</h6>
+        </div>
+        <div class="col d-flex align-items-center the-reverse-right pl-0">
+            <h6><%= @event.title %></h6>
+        </div>
+    </div>
+
+     <div class="row mx-auto pb-1">
+        <div class="col d-flex flex-row-reverse the-reverse">
+            <h6>Description</h6>
+        </div>
+        <div class="col d-flex align-items-center the-reverse-right pl-0">
+            <h6><%= @event.description %></h6>
+        </div>
+    </div>
+
+     <div class="row mx-auto pb-1">
+        <div class="col d-flex flex-row-reverse the-reverse">
+            <h6>Date</h6>
+        </div>
+        <div class="col d-flex align-items-center the-reverse-right pl-0">
+            <h6><%= @event.start_date.day %>/<%= @event.start_date.month %>/<%= @event.start_date.year %></h6>
+        </div>
+    </div>
+
+    <div class="row mx-auto pb-1">
+        <div class="col d-flex flex-row-reverse the-reverse">
+            <h6>Lieu</h6>
+        </div>
+        <div class="col d-flex align-items-center the-reverse-right pl-0">
+            <h6><%= @event.location %></h6>
+        </div>
+    </div>
+
+    <div class="row mx-auto pb-1">
+        <div class="col d-flex flex-row-reverse the-reverse">
+            <h6>Durée</h6>
+        </div>
+        <div class="col d-flex align-items-center the-reverse-right pl-0">
+            <h6><%= @event.duration %> minutes</h6>
+        </div>
+    </div>
+
+    <div class="row mx-auto pb-1">
+        <div class="col d-flex flex-row-reverse the-reverse">
+            <h6>Prix</h6>
+        </div>
+        <div class="col d-flex align-items-center the-reverse-right pl-0">
+            <h6><%= @event.price %>€</h6>
+        </div>
+    </div>
+</div>

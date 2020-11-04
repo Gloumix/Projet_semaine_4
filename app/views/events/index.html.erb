@@ -1,0 +1,54 @@
+ 
+
+<div class="container-fluid pt-5 imeesimp">
+        <div class="row">
+            <h1 class="display-3 mx-auto title">THP Eventbrite</h1>
+        </div>
+        <div class="row">
+            <p class="lead mx-auto">Participe aux évènements près de chez toi.</p>
+        </div>
+         <div class="row">
+                <%= link_to new_event_path, :class=>"btn btn-outline-primary btn-xl mx-auto mt-5 mb-5" do %>
+                    <strong>Créer un event</strong>
+                <% end %>        
+   
+        </div>
+
+</div>
+
+
+ <div class="row background-row pt-5">
+        <div class="container">
+            <% @events.each do |ae| %>
+                <div class="row pb-5">
+                    <% ae.each do |e| %>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title d-flex justify-content-between">
+                                        <h5><%= e.title %> <h6><small><em><%= e.created_at.to_s.split(' ')[0] %></em></small></h6></h5>
+                                    </div>
+                                    <p class="card-text pb-2">
+                                        écrit par  
+
+                                        <% if current_user == e.user %>
+                                             <%= link_to user_path(e.user.id) do %>
+                                                <strong><%= e.user.first_name %> <%= e.user.last_name %> </strong>   
+                                            <% end %>
+                                        <% else %>
+                                             <strong><%= e.user.first_name %> <%= e.user.last_name %> </strong>  
+                                    
+                                        <% end %>
+                                    </p>
+                                      <%= link_to event_path(e.id), :class=>"btn btn-primary" do %>
+                                        <strong>voir plus</strong>
+                                    <% end %>
+                       
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>

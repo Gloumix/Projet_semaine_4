@@ -1,0 +1,52 @@
+<div class="container mx-auto mt-5 pt-5 w-25">
+
+ <%= form_tag url_for(action: "create") do %>
+    
+    <div class="form-group">
+      <%= label_tag 'Titre' %>
+       <div class="col-md-8">
+      <%= text_field_tag :title %>
+       </div>
+    </div>
+
+
+    <div class="form-group">
+        <%= label_tag 'Description' %>
+        <div class="col-md-8">
+            <%= text_area_tag :description %>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag 'Lieu' %>
+       <div class="col-md-8">
+      <%= text_field_tag :location %>
+       </div>
+    </div>
+
+     <div class="form-group">
+      <%= label_tag 'Durée (en minutes)' %>
+       <div class="col-md-8">
+      <%= text_field_tag :duration %>
+       </div>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag 'Prix' %>
+       <div class="col-md-8">
+      <%= text_field_tag :price %> 
+      
+       </div>
+    </div>
+
+    <div class="form-group">
+        <%= label_tag 'Date de début' %>
+        <div class="col-md-8 ml-3">
+            <%= date_field_tag :start_date %>
+        </div>
+    </div>
+    
+      <%= submit_tag "Enregistrer", class: 'btn btn-primary ml-5'%>
+
+    <% end %>
+</div>

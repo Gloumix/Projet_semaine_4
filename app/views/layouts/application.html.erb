@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Evenbritte</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <a class="navbar-brand" href="/events">THP Evenbrite</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav ml-auto">
+
+      <% if !user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log in", new_user_session_path, class: "nav-link"%>
+        </li>
+       <% end %>
+
+      <% if user_signed_in? %>
+           <li class="nav-item">
+              <a class="nav-link" href="#">Bonjour <%= current_user.first_name.capitalize %></a>
+          </li> 
+         <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <% end %>
+    </ul>
+    
+  </div>
+</nav>
+
+    <%= yield %>
+  </body>
+</html>
